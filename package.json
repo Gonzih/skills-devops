@@ -1,1 +1,1 @@
-{"name":"@gonzih/skills-devops","version":"1.0.0","description":"DevOps skills for Claude Code","type":"module","scripts":{"postinstall":"node install.js"},"files":["skills/","install.js","README.md"],"keywords":["claude","mcp","skills","devops"],"license":"MIT"}
+{"name":"@gonzih/skills-devops","version":"1.1.0","description":"DevOps skills for Claude Code","type":"module","scripts":{"postinstall":"node install.js"},"files":["skills/","install.js","README.md"],"keywords":["claude","mcp","skills","devops"],"license":"MIT"}

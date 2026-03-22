@@ -21,6 +21,12 @@ Guide incident response from detection through resolution, coordinate communicat
 5. **Resolve**: Confirm resolution criteria met; set follow-up review time
 6. **Postmortem**: Generate blameless postmortem doc with 5-whys root cause analysis and action items
 
+## Infra rollback (Pulumi)
+When the incident involves infrastructure managed by Pulumi:
+1. Run `pulumi stack history` to list recent deployments and identify the last known-good deploy
+2. Re-deploy the previous version: check out the corresponding commit and run `pulumi up`, or use `pulumi up --target-replace <urn>` for surgical replacement of a single resource
+3. Use `pulumi refresh` after rollback to confirm state matches real infrastructure
+
 ## Example
 User: "Production database is down, started 14:32 UTC, ~10k users affected"
 → Declares SEV1, drafts initial stakeholder update, starts timeline, prompts for on-call contacts, and guides through mitigation steps to resolution and postmortem.

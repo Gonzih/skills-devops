@@ -20,6 +20,12 @@ Generate clear, actionable operational runbooks for services, infrastructure com
 4. Review for completeness: every step has a verification command, rollback is covered
 5. Save to the appropriate location (e.g., `docs/runbooks/<service>.md`)
 
+## Infra change runbooks (Pulumi)
+When the runbook covers an infrastructure change managed by Pulumi, include:
+- `pulumi preview` output showing the planned resource changes (paste or link)
+- Link to the stack in Pulumi Cloud (e.g. `https://app.pulumi.com/<org>/<project>/<stack>`)
+- Rollback step using `pulumi stack history` to identify the previous deployment and re-run it
+
 ## Example
 User: "Write a runbook for restarting the payment-service in Kubernetes"
 → Produces a runbook covering health checks, drain, rolling restart, verification, and rollback with `kubectl` commands.
