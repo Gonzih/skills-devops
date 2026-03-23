@@ -29,6 +29,11 @@ When the pipeline deploys infrastructure with Pulumi, check for:
   - **Config missing**: stack config not committed or secret not set — run `pulumi config set <key>`
   - **Passphrase prompt**: `PULUMI_CONFIG_PASSPHRASE` env var missing for self-managed backends
 
+## Live Data Sources
+- **GitHub Actions API**: `https://api.github.com/repos/{owner}/{repo}/actions/runs` — fetch recent workflow run status, logs, and failure reasons
+- **Docker Hub vulnerability feeds**: `https://hub.docker.com/v2/repositories/{namespace}/{repo}/tags` — check image tag availability; cross-reference CVEs via Docker Scout or Snyk
+- **npm audit patterns**: Run `npm audit --json` for dependency vulnerability data; common failure patterns include `EAUDITNOPJSON`, peer conflict errors, and lock file drift
+
 ## Example
 User: "My GitHub Actions deploy job is failing with 'Error: Unable to locate executable file: docker'"
 → Diagnose missing Docker setup step, suggest `docker/setup-buildx-action`, apply to workflow YAML.
