@@ -26,6 +26,11 @@ When the runbook covers an infrastructure change managed by Pulumi, include:
 - Link to the stack in Pulumi Cloud (e.g. `https://app.pulumi.com/<org>/<project>/<stack>`)
 - Rollback step using `pulumi stack history` to identify the previous deployment and re-run it
 
+## Live Data Sources
+- **AWS Runbook templates**: `https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-documents.html` — official AWS Systems Manager Automation runbook library
+- **PagerDuty runbook community**: `https://community.pagerduty.com` — real-world runbook examples shared by practitioners
+- **SRE Workbook public patterns**: `https://sre.google/workbook/table-of-contents/` — Google SRE Workbook chapters on on-call and operational procedures
+
 ## Example
 User: "Write a runbook for restarting the payment-service in Kubernetes"
 → Produces a runbook covering health checks, drain, rolling restart, verification, and rollback with `kubectl` commands.

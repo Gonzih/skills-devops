@@ -20,6 +20,12 @@ Analyze a set of incoming monitoring alerts, determine severity and urgency, ide
 4. Identify the root cause alert and downstream effects
 5. Output a triage summary: what to act on now, what to monitor, what to silence
 
+## Live Data Sources
+- **Prometheus alerting rule examples**: `https://github.com/samber/awesome-prometheus-alerts` — community-maintained library of Prometheus alerting rules by category (infra, databases, Kubernetes, etc.)
+- **AWS status page API**: `https://health.aws.amazon.com/health/status` — current AWS service health; programmatic access via AWS Health API (`aws health describe-events`)
+- **GCP status page API**: `https://status.cloud.google.com/incidents.json` — machine-readable GCP incident feed
+- **Azure status API**: `https://azure.status.microsoft/api/v2/status.json` — Azure service health JSON feed
+
 ## Example
 User: "I have 47 alerts firing: disk full on db-01, high latency on api-gateway, 5xx spike on checkout"
 → Identifies disk-full on db-01 as root cause driving the cascade, recommends clearing disk space first, provides ordered action plan.

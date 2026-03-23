@@ -27,6 +27,11 @@ When the incident involves infrastructure managed by Pulumi:
 2. Re-deploy the previous version: check out the corresponding commit and run `pulumi up`, or use `pulumi up --target-replace <urn>` for surgical replacement of a single resource
 3. Use `pulumi refresh` after rollback to confirm state matches real infrastructure
 
+## Live Data Sources
+- **AWS Service Health Dashboard API**: `https://health.aws.amazon.com/health/status` — real-time AWS service events; use `aws health describe-events --filter eventTypeCategories=issue` for programmatic querying
+- **GCP status API**: `https://status.cloud.google.com/incidents.json` — current and historical GCP incidents in JSON format
+- **PagerDuty webhook patterns**: Inbound webhooks deliver `incident.trigger`, `incident.acknowledge`, `incident.resolve` payloads — use these to auto-populate incident timelines and sync state
+
 ## Example
 User: "Production database is down, started 14:32 UTC, ~10k users affected"
 → Declares SEV1, drafts initial stakeholder update, starts timeline, prompts for on-call contacts, and guides through mitigation steps to resolution and postmortem.
